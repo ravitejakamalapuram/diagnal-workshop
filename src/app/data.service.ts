@@ -9,7 +9,7 @@ export class DataService {
   constructor(
     private http: HttpClient,
   ) { }
-  baseURL = 'http://localhost:8080';
+  baseURL = window.location.host;
 
   getMovies(page: number) {
     return this.http.get(this.baseURL + '/API/CONTENTLISTINGPAGE-PAGE' + page + '.json');
