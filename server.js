@@ -1,10 +1,15 @@
 var express = require('express');
 var app = express();
 const fs = require('fs');
+
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+
 var obj1 = require('./API/CONTENTLISTINGPAGE-PAGE1');
 var obj2 = require('./API/CONTENTLISTINGPAGE-PAGE2');
 var obj3 = require('./API/CONTENTLISTINGPAGE-PAGE3');
 var movies = [];
+
 obj1['page']['content-items']['content'].map(o => {
     movies.push(o.name);
 });
@@ -22,7 +27,11 @@ function removeDuplicateUsingSet(arr) {
     return unique_array
 }
 
-app.use('/', express.static(__dirname));
+app.use('/', express.static(__dirname + '/www'));
+
+// app.get('/', function(req, res){
+//     res.sendFile(express.static(__dirname +'/dist/diangnal-workshop/index.html'));
+// });
 
 app.get('/search/:text', function (req, res) {
     var result = movies.filter(o => {
@@ -31,4 +40,4 @@ app.get('/search/:text', function (req, res) {
     res.send(result);
 });
 
-app.listen(8080, function () { console.log('listening') });
+app.listen(port, ip);
