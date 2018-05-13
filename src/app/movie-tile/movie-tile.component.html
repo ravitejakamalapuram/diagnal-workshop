@@ -1,0 +1,9 @@
+<div class="movie-container">
+  <div class="movie-poster">
+    <img src="../../assets/{{movie['poster-image']}}" alt="{{movie.name}}" onError="this.src='../../assets/placeholder_for_missing_posters.png'"
+    />
+  </div>
+  <div class="movie-name ellipsis" title="{{movie.name}}">
+    {{movie.name}}
+  </div>
+</div>

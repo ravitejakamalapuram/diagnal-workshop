@@ -1,0 +1,92 @@
+.container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: white;
+}
+
+.search-input {
+    background: black;
+    border: none;
+    color: white;
+    border-bottom: 1px solid white;
+    outline: 0;
+    width: 100%;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 1.125;
+}
+
+.title {
+    background-image: url("../assets/nav_bar.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    width: calc(100% - 60px);
+    z-index: 999;
+    flex-direction: row;
+    display: flex;
+    place-content: center space-between;
+    align-items: center;
+    position: fixed;
+    height: 192px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.grid-content {
+    padding-top: 192px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-result {
+    position: absolute;
+    background: white;
+    color: black;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 3px;
+    border-radius: 3px;
+}
+
+.search-result div:hover {
+    background: gray;
+}
+
+.end {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+}
+
+@media (max-width:960px) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    app-movie-tile {
+        flex: 1 1 33.3%;
+        max-width: 33.3%;
+    }
+    .title img {
+        display: block;
+        max-width: 26px;
+        height: auto;
+    }
+}
+
+@media (min-width:961px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    app-movie-tile {
+        flex: 1 1 20%;
+        max-width: 20%;
+    }
+    .title img {
+        display: block;
+        max-width: 32px;
+        height: auto;
+    }
+}

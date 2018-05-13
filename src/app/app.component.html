@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="title">
+    <h2 *ngIf="!searching">{{title}}</h2>
+    <img src="assets/Back.png" alt="Back Button" *ngIf="searching" (click)="searching = false">
+    <form *ngIf="searching" style="width:60%;position:relative;">
+      <input type="text" name="moviename" class="search-input" autocomplete="off" autofocus placeholder="Search Movies.." [ngModel]='moviename' (ngModelChange)='movienameSearch($event)'>
+      <div class="search-result" *ngIf="search_results !== 'no'">
+        <div *ngFor="let res of search_results" (click)="selectedMovie(res);">
+          {{res}}
+        </div>
+      </div>
+      <div class="search-result" *ngIf="search_results === 'no'" style="text-align: center;">
+        No Results
+      </div>
+    </form>
+    <img src="assets/search.png" alt="Search Button" (click)="searching = true;">
+  </div>
+  <div class="grid-content">
+    <app-movie-tile *ngFor="let movie of movies" [movie]="movie"></app-movie-tile>
+  </div>
+  <div *ngIf="end" class="end">
+    The END !!!
+  </div>
+</div>
