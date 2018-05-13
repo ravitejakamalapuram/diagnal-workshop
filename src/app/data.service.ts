@@ -12,10 +12,10 @@ export class DataService {
   baseURL = window.location.host;
 
   getMovies(page: number) {
-    return this.http.get(this.baseURL + '/API/CONTENTLISTINGPAGE-PAGE' + page + '.json');
+    return this.http.get('/API/CONTENTLISTINGPAGE-PAGE' + page + '.json');
   }
 
   getSearchedMovie(text: string) {
-    return this.http.get(this.baseURL + '/search/' + text);
+    return this.http.get('/search/' + text);
   }
 }
