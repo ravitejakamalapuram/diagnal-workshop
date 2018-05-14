@@ -53,7 +53,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     window.addEventListener('scroll', () => {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
         this.getMovies();
       }
     }, true);

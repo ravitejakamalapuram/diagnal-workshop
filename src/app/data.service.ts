@@ -9,7 +9,6 @@ export class DataService {
   constructor(
     private http: HttpClient,
   ) { }
-  baseURL = window.location.host;
 
   getMovies(page: number) {
     return this.http.get('/API/CONTENTLISTINGPAGE-PAGE' + page + '.json');
