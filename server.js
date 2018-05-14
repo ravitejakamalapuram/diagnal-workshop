@@ -41,3 +41,4 @@ app.get('/search/:text', function (req, res) {
 });
 
 app.listen(port, ip);
+console.log("lisening at, ", port);
