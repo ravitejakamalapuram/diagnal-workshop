@@ -30,7 +30,7 @@ function removeDuplicateUsingSet(arr) {
 app.use('/', express.static(__dirname + '/www'));
 
 // app.get('/', function(req, res){
-//     res.sendFile(express.static(__dirname +'/dist/diangnal-workshop/index.html'));
+//     res.sendFile(express.static(__dirname +'/dist/diagnal-workshop/index.html'));
 // });
 
 app.get('/search/:text', function (req, res) {
