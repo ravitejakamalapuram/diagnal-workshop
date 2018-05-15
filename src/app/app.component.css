@@ -81,8 +81,8 @@
 @media (min-width:961px) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     app-movie-tile {
-        flex: 1 1 20%;
-        max-width: 20%;
+        flex: 1 1 33.3%;
+        max-width: 33.3%;
     }
     .title img {
         display: block;
